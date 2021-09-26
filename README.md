@@ -1,16 +1,63 @@
-# moadaly_v2
+# Moadaly معدلي
 
-A new Flutter project.
+محاكي حساب المعدل لطلبة نظام ل.م.د تخصص رياضيات وإعلام آلي
+يستعمل لكل الجامعات التي تتابع نفس المنهاج لميدان الرياضيات والإعلام الآلي في الجزائر،
 
-## Getting Started
+* فيه جزئية خاصة بتخصصات الماستر في الإعلام الآلي بالبويرة،
 
-This project is a starting point for a Flutter application.
+apk : [moadaly app](https://drive.google.com/file/d/1bb2PToHU4kCU2Vi3AocOX97UP7AKpUp3/view?usp=sharing)
 
-A few resources to get you started if this is your first Flutter project:
+Try it : https://abdelmadjidsmail.github.io/moadaly/ 
 
-- [Lab: Write your first Flutter app](https://flutter.dev/docs/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://flutter.dev/docs/cookbook)
+See our design : [design](https://github.com/Sho-Oter/dynamic-grade-average-calculator)
 
-For help getting started with Flutter, view our
-[online documentation](https://flutter.dev/docs), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+See  : [SourceCode](https://github.com/Abdelmadjidsmail/moadaly)
+
+## App
+
+<div align="center">
+    <img src="screen/s4.png" width="250px"</img>
+    <img src="screen/s2.png" width="250px"</img> 
+</div>
+<div align="center">
+    <img src="screen/s3.png" width="250px"</img> 
+    <img src="screen/s1.png" width="250px"</img> 
+</div>
+
+## Moadaly
+
+* is a web application that allow you to calculate your pass marks. The app is for computer science student " LMD "   
+* تطبيق ويب لحساب المعدل الفصلي و السنوي للسنة الاولى  رياضيات وإعلام آلي وسنوات اعلام الى   نظام [LMD] الجزائر 
+
+* التخصصات المدعومة حاليا:
+  * L1 MI
+  * L2 Info
+  * L3 SI + ISIL
+  * M1 ISIL+ GSI
+  * M2 ISIL + GSI
+* تمت إضافة السنة الأولى في ميداني العلوم والتكنولوجيا وميدان علوم المادة ST/SM
+
+
+## Issues
+Testing is much appreciated. Please post any issue you find in the [Issue tracker](https://github.com/tarek-berkane/moadaly_v2/issues).
+
+
+
+## Project Implementation by 
+* [**Smail Abd El Madjid**](https://github.com/Abdelmadjidsmail/)
+* [**Taha Zerrouki**](https://github.com/linuxscout/)
+* [**Tarek Berkane**](https://github.com/tarekDZ2019) *mobile app*
+* [**Aouf Ali**](https://github.com/Sho-Oter)  *design* 
+
+## Built With
+* [flutter/dart]
+
+## Contribution
+* Adapt this app for more specialities (ST, SM, etc..)
+
+
+
+
+
+
+
