@@ -6,7 +6,7 @@
 
 apk : [moadaly_app](https://drive.google.com/file/d/1bb2PToHU4kCU2Vi3AocOX97UP7AKpUp3/view?usp=sharing)
 
-Try it : https://abdelmadjidsmail.github.io/moadaly/ 
+Try it :[moadaly-web](https://madjsmail.github.io/moadaly/) 
 
 See our design : [design](https://github.com/Sho-Oter/dynamic-grade-average-calculator)
 
