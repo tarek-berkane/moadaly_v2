@@ -1,10 +1,9 @@
 # Moadaly معدلي
-<div style="direction:rtl;">
 محاكي حساب المعدل لطلبة نظام ل.م.د تخصص رياضيات وإعلام آلي
 يستعمل لكل الجامعات التي تتابع نفس المنهاج لميدان الرياضيات والإعلام الآلي في الجزائر،
 
 * فيه جزئية خاصة بتخصصات الماستر في الإعلام الآلي بالبويرة،
-</div>
+
 apk : [moadaly_app](https://drive.google.com/file/d/1bb2PToHU4kCU2Vi3AocOX97UP7AKpUp3/view?usp=sharing)
 
 Try it : https://abdelmadjidsmail.github.io/moadaly/ 
