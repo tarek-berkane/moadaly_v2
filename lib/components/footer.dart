@@ -7,8 +7,8 @@ import 'package:url_launcher/url_launcher.dart';
 class Footer extends StatelessWidget {
   const Footer({Key? key}) : super(key: key);
 
-  Future _launchURL(_url) async => await canLaunch(_url)
-      ? await launch(_url)
+  Future _launchURL(_url) async => await canLaunchUrl(_url)
+      ? await launchUrl(_url)
       : throw 'Could not launch $_url';
 
   @override
@@ -23,26 +23,31 @@ class Footer extends StatelessWidget {
             IconButton(
               onPressed: () {
                 // await _launchURL(_url)
-                Get.to(AboutScreen());
+                Get.to(const AboutScreen());
               },
               icon: const ImageIcon(AssetImage(DEV_ICON)),
             ),
             IconButton(
               onPressed: () async {
-                await _launchURL(
-                    "https://github.com/tarek-berkane/moadaly-App");
+                await _launchURL(Uri(
+                  scheme: "https",
+                  host: "github.com",
+                  path: "tarek-berkane/moadaly_v2",
+                ));
               },
               icon: const ImageIcon(AssetImage(GITHUB_ICON)),
             ),
             IconButton(
               onPressed: () async {
-                await _launchURL("http://dpinfo.univ-bouira.dz/");
+                await _launchURL(
+                    Uri(scheme: "http", host: 'dpinfo.univ-bouira.dz'));
               },
               icon: const ImageIcon(AssetImage(SITE_ICON)),
             ),
             IconButton(
               onPressed: () async {
-                await _launchURL("https://www.univ-bouira.dz/fr/");
+                await _launchURL(
+                    Uri(scheme: "https", host: "www.univ-bouira.dz"));
               },
               icon: const ImageIcon(AssetImage(UNIV_ICON)),
             ),

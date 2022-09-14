@@ -50,9 +50,10 @@ class HomePage extends StatelessWidget {
                 style: const TextStyle(fontSize: 18, color: Colors.white),
                 // style: GoogleFonts.tajawal(fontSize: 18, color: Colors.white),
                 child: AnimatedTextKit(
+                  repeatForever: true,
                   animatedTexts: [
                     FadeAnimatedText('Université Akli Mohand Oulhadj Bouira',
-                        duration: Duration(seconds: 5)),
+                        duration: const Duration(seconds: 5)),
                     FadeAnimatedText(
                         'Faculte des sciences et sciences appliquees'),
                     FadeAnimatedText('Departement Informatique'),

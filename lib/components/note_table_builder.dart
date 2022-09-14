@@ -37,141 +37,138 @@ class NoteTableBuilder {
 
   Widget buildMoyTable(NoteController controller) {
     return Center(
-      child: Container(
-        // width: 300,
-        child: Table(
-          border: TableBorder.all(),
-          columnWidths: const <int, TableColumnWidth>{
-            0: FlexColumnWidth(0.5),
-            1: FlexColumnWidth(0.25),
-            2: FlexColumnWidth(0.25),
-          },
-          defaultVerticalAlignment: TableCellVerticalAlignment.middle,
-          children: [
-            TableRow(
-              decoration: const BoxDecoration(
-                gradient: LinearGradient(
-                  colors: [
-                    Color(UNITY_START_COLOR),
-                    Color(UNITY_START_COLOR),
-                    Color(SEMESTRE_END_COLOR),
-                  ],
-                  begin: Alignment.topLeft,
-                  end: Alignment.bottomRight,
+      child: Table(
+        border: TableBorder.all(),
+        columnWidths: const <int, TableColumnWidth>{
+          0: FlexColumnWidth(0.5),
+          1: FlexColumnWidth(0.25),
+          2: FlexColumnWidth(0.25),
+        },
+        defaultVerticalAlignment: TableCellVerticalAlignment.middle,
+        children: [
+          TableRow(
+            decoration: const BoxDecoration(
+              gradient: LinearGradient(
+                colors: [
+                  Color(UNITY_START_COLOR),
+                  Color(UNITY_START_COLOR),
+                  Color(SEMESTRE_END_COLOR),
+                ],
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+              ),
+            ),
+            children: [
+              TableCell(
+                child: SizedBox(
+                  height: 40,
+                  // color: Colors.red,
+                  child: Center(child: textTable("Semestre/année")),
                 ),
               ),
-              children: [
-                TableCell(
-                  child: Container(
-                    height: 40,
-                    // color: Colors.red,
-                    child: Center(child: textTable("Semestre/année")),
-                  ),
-                ),
-                TableCell(child: textTable("Moyenne")),
-                TableCell(child: textTable("Crédits")),
-              ],
-            ),
-            TableRow(
-              decoration: const BoxDecoration(color: Colors.white12),
-              children: [
-                TableCell(
-                  child: Container(
-                    height: 40,
-                    // color: Colors.red,
-                    child: Center(
-                      child: textTable(
-                        "semestre1",
-                      ),
-                    ),
-                  ),
-                ),
-                TableCell(
+              TableCell(child: textTable("Moyenne")),
+              TableCell(child: textTable("Crédits")),
+            ],
+          ),
+          TableRow(
+            decoration: const BoxDecoration(color: Colors.white12),
+            children: [
+              TableCell(
+                child: SizedBox(
+                  height: 40,
+                  // color: Colors.red,
                   child: Center(
                     child: textTable(
-                      controller
-                          .getSemester('semestre1', 'moy')
-                          .toStringAsFixed(2),
+                      "semestre1",
                     ),
                   ),
                 ),
-                TableCell(
+              ),
+              TableCell(
+                child: Center(
+                  child: textTable(
+                    controller
+                        .getSemester('semestre1', 'moy')
+                        .toStringAsFixed(2),
+                  ),
+                ),
+              ),
+              TableCell(
+                child: Center(
+                  child: textTable(
+                    controller
+                        .getSemester('semestre1', 'credits')
+                        .toStringAsFixed(2),
+                  ),
+                ),
+              ),
+            ],
+          ),
+          TableRow(
+            decoration: const BoxDecoration(color: Colors.white12),
+            children: [
+              TableCell(
+                child: Container(
+                  height: 40,
+                  // color: Colors.red,
                   child: Center(
                     child: textTable(
-                      controller
-                          .getSemester('semestre1', 'credits')
-                          .toStringAsFixed(2),
+                      "semestre2",
                     ),
                   ),
                 ),
-              ],
-            ),
-            TableRow(
-              decoration: const BoxDecoration(color: Colors.white12),
-              children: [
-                TableCell(
-                  child: Container(
-                    height: 40,
-                    // color: Colors.red,
-                    child: Center(
-                      child: textTable(
-                        "semestre2",
-                      ),
-                    ),
+              ),
+              TableCell(
+                child: Center(
+                  child: textTable(
+                    controller
+                        .getSemester('semestre2', 'moy')
+                        .toStringAsFixed(2),
                   ),
                 ),
-                TableCell(
+              ),
+              TableCell(
+                child: Center(
+                  child: textTable(
+                    controller
+                        .getSemester('semestre2', 'credits')
+                        .toStringAsFixed(2),
+                  ),
+                ),
+              ),
+            ],
+          ),
+          TableRow(
+            decoration: const BoxDecoration(color: Colors.white12),
+            children: [
+              TableCell(
+                child: SizedBox(
+                  height: 40,
+                  // color: Colors.red,
                   child: Center(
                     child: textTable(
-                      controller
-                          .getSemester('semestre2', 'moy')
-                          .toStringAsFixed(2),
+                      "Année",
                     ),
                   ),
                 ),
-                TableCell(
-                  child: Center(
-                    child: textTable(
-                      controller
-                          .getSemester('semestre2', 'credits')
-                          .toStringAsFixed(2),
-                    ),
+              ),
+              TableCell(
+                child: Center(
+                  child: textTable(
+                    controller.getYear('moy').toStringAsFixed(2),
                   ),
                 ),
-              ],
-            ),
-            TableRow(
-              decoration: const BoxDecoration(color: Colors.white12),
-              children: [
-                TableCell(
-                  child: Container(
-                    height: 40,
-                    // color: Colors.red,
-                    child: Center(
-                      child: textTable(
-                        "Année",
-                      ),
-                    ),
+              ),
+              TableCell(
+                child: Center(
+                  child: textTable(
+                    controller.getYear('credits').toStringAsFixed(2),
                   ),
                 ),
-                TableCell(
-                  child: Center(
-                    child: textTable(
-                      controller.getYear('moy').toStringAsFixed(2),
-                    ),
-                  ),
-                ),
-                TableCell(
-                  child: Center(
-                    child: textTable(
-                      controller.getYear('credits').toStringAsFixed(2),
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ],
-        ),
+              ),
+            ],
+          ),
+        ],
       ),
     );
   }
@@ -202,7 +199,7 @@ class NoteTableBuilder {
           ),
           children: [
             TableCell(
-              child: Container(
+              child: SizedBox(
                 height: 40,
                 // color: Colors.red,
                 child: Center(child: textTable("Modules")),
@@ -231,7 +228,7 @@ class NoteTableBuilder {
             decoration: const BoxDecoration(color: Colors.white12),
             children: [
               TableCell(
-                child: Container(
+                child: SizedBox(
                   height: 40,
                   // color: Colors.red,
                   child: Center(
@@ -303,7 +300,7 @@ class NoteTableBuilder {
         ),
         children: [
           TableCell(
-            child: Container(
+            child: SizedBox(
               height: 35,
               // color: Colors.red,
               child: Center(
@@ -354,7 +351,7 @@ class NoteTableBuilder {
           child: Container(
             // height: 60,
             // color: Colors.red,
-            constraints: BoxConstraints(minHeight: 60),
+            constraints: const BoxConstraints(minHeight: 60),
             padding: const EdgeInsets.symmetric(vertical: 2),
             child: Center(
               child: textTable(controller.notes[semesterName]['unites'][unityId]
@@ -373,25 +370,22 @@ class NoteTableBuilder {
                         ['modules'][moduleId]['credit']
                     .toString()))),
         TableCell(
-          child: Container(
-            // color: Colors.red,
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                if (controller.notes[semesterName]['unites'][unityId]['modules']
-                        [moduleId]['poids_tp'] !=
-                    0)
-                  module_button(
-                      "TP", 'tp', controller, semesterName, unityId, moduleId),
-                if (controller.notes[semesterName]['unites'][unityId]['modules']
-                        [moduleId]['poids_td'] !=
-                    0)
-                  module_button(
-                      "TD", 'td', controller, semesterName, unityId, moduleId),
-                module_button("Exam", 'exam', controller, semesterName, unityId,
-                    moduleId),
-              ],
-            ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.spaceAround,
+            children: [
+              if (controller.notes[semesterName]['unites'][unityId]['modules']
+                      [moduleId]['poids_tp'] !=
+                  0)
+                moduleButton(
+                    "TP", 'tp', controller, semesterName, unityId, moduleId),
+              if (controller.notes[semesterName]['unites'][unityId]['modules']
+                      [moduleId]['poids_td'] !=
+                  0)
+                moduleButton(
+                    "TD", 'td', controller, semesterName, unityId, moduleId),
+              moduleButton("Exam", 'exam', controller, semesterName, unityId,
+                  moduleId),
+            ],
           ),
         ),
         TableCell(
@@ -416,19 +410,19 @@ class NoteTableBuilder {
     );
   }
 
-  Container module_button(var title, var type, NoteController controller,
+  Container moduleButton(var title, var type, NoteController controller,
       String semesterName, int unityId, int moduleId) {
     WidgetHelp widgetHelp = WidgetHelp();
 
     return Container(
-      constraints: BoxConstraints(maxWidth: 100),
+      constraints: const BoxConstraints(maxWidth: 100),
       decoration: BoxDecoration(
         border: Border.all(color: Colors.white54),
         borderRadius: BorderRadius.circular(15),
         // color: Colors.white,
       ),
-      margin: EdgeInsets.symmetric(vertical: 1.5, horizontal: 5),
-      padding: EdgeInsets.symmetric(vertical: 2),
+      margin: const EdgeInsets.symmetric(vertical: 1.5, horizontal: 5),
+      padding: const EdgeInsets.symmetric(vertical: 2),
       alignment: Alignment.center,
       child: InkWell(
         onTap: () async {
@@ -460,7 +454,7 @@ class WidgetHelp {
       BuildContext context, String text, String type) async {
     double note = -1;
     final formKey = GlobalKey<FormState>();
-    String? check_valide(String? text) {
+    String? checkValide(String? text) {
       try {
         if (text == null) {
           return "pls insert value";
@@ -481,46 +475,44 @@ class WidgetHelp {
       builder: (BuildContext context) {
         return SingleChildScrollView(
           child: AlertDialog(
-            title: Text('Entrerz la note de ${text}'),
-            content: Container(
-              child: Form(
-                key: formKey,
-                child: Row(
-                  mainAxisAlignment: MainAxisAlignment.spaceAround,
-                  children: <Widget>[
-                    Container(
-                      margin: EdgeInsets.only(top: 30),
-                      alignment: Alignment.center,
-                      width: 150,
-                      child: TextFormField(
-                        autofocus: true,
-                        keyboardType: TextInputType.number,
-                        validator: check_valide,
-                        onSaved: (str) {
-                          note = num.parse(str!).toDouble();
-                        },
-                        onEditingComplete: () {
-                          var form = formKey.currentState;
-                          if (form!.validate()) {
-                            form.save();
-                            Navigator.of(context).pop(note);
-                          }
-                        },
-                        decoration: InputDecoration(
-                            border: OutlineInputBorder(
-                              borderRadius: BorderRadius.circular(15),
-                            ),
-                            labelText: type,
-                            labelStyle: TextStyle(color: Colors.blue)),
-                      ),
+            title: Text('Entrerz la note de $text'),
+            content: Form(
+              key: formKey,
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceAround,
+                children: <Widget>[
+                  Container(
+                    margin: const EdgeInsets.only(top: 30),
+                    alignment: Alignment.center,
+                    width: 150,
+                    child: TextFormField(
+                      autofocus: true,
+                      keyboardType: TextInputType.number,
+                      validator: checkValide,
+                      onSaved: (str) {
+                        note = num.parse(str!).toDouble();
+                      },
+                      onEditingComplete: () {
+                        var form = formKey.currentState;
+                        if (form!.validate()) {
+                          form.save();
+                          Navigator.of(context).pop(note);
+                        }
+                      },
+                      decoration: InputDecoration(
+                          border: OutlineInputBorder(
+                            borderRadius: BorderRadius.circular(15),
+                          ),
+                          labelText: type,
+                          labelStyle: const TextStyle(color: Colors.blue)),
                     ),
-                  ],
-                ),
+                  ),
+                ],
               ),
             ),
             actions: <Widget>[
-              FlatButton(
-                child: Text('Ok'),
+              TextButton(
+                child: const Text('Ok'),
                 onPressed: () {
                   var form = formKey.currentState;
                   if (form!.validate()) {
