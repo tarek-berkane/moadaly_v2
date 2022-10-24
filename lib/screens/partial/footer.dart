@@ -8,7 +8,7 @@ class Footer extends StatelessWidget {
   const Footer({Key? key}) : super(key: key);
 
   Future _launchURL(_url) async => await canLaunchUrl(_url)
-      ? await launchUrl(_url)
+      ? await launchUrl(_url, mode: LaunchMode.externalApplication)
       : throw 'Could not launch $_url';
 
   @override
