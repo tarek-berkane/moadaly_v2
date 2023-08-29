@@ -1,4 +1,4 @@
-package com.example.moadaly_v2
+package com.DevDZBouira.moadaly_app
 
 import io.flutter.embedding.android.FlutterActivity
 

@@ -1,5 +1,5 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.moadaly_v2">
+    package="com.DevDZBouira.moadaly_app">
    <application
         android:label="Moadaly"
         android:name="${applicationName}"

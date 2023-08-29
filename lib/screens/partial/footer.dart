@@ -1,7 +1,7 @@
 import "package:flutter/material.dart";
 import 'package:get/route_manager.dart';
-import 'package:moadaly_v2/constants.dart';
-import 'package:moadaly_v2/screens/about.dart';
+import 'package:moadaly_app/constants.dart';
+import 'package:moadaly_app/screens/about.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Footer extends StatelessWidget {
@@ -16,40 +16,46 @@ class Footer extends StatelessWidget {
     return Container(
       color: Colors.white70,
       child: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 20.0),
+        padding: const EdgeInsets.symmetric(horizontal: 5.0),
         child: Row(
           mainAxisAlignment: MainAxisAlignment.spaceAround,
           children: [
-            IconButton(
-              onPressed: () {
-                // await _launchURL(_url)
-                Get.to(AboutScreen());
-              },
-              icon: const ImageIcon(AssetImage(DEV_ICON)),
+            Column(
+              children: [
+                IconButton(
+
+                  onPressed: () {
+                    // await _launchURL(_url)
+                    Get.to(AboutScreen());
+                  },
+                  icon: const ImageIcon(AssetImage(DEV_ICON)),
+                ),
+                const Text("About",style: TextStyle(fontSize: 9,fontWeight: FontWeight.w600),),
+              ],
             ),
-            IconButton(
-              onPressed: () async {
-                await _launchURL(Uri(
-                  scheme: "https",
-                  host: "github.com",
-                  path: "tarek-berkane/moadaly_v2",
-                ));
-              },
-              icon: const ImageIcon(AssetImage(GITHUB_ICON)),
+            Column(
+              children: [
+                IconButton(
+                  onPressed: () async {
+                    await _launchURL(
+                        Uri(scheme: "http", host: 'dpinfo.univ-bouira.dz'));
+                  },
+                  icon: const ImageIcon(AssetImage(SITE_ICON)),
+                ),
+                const Text("Département Info",style: TextStyle(fontSize: 9,fontWeight: FontWeight.w600),),
+              ],
             ),
-            IconButton(
-              onPressed: () async {
-                await _launchURL(
-                    Uri(scheme: "http", host: 'dpinfo.univ-bouira.dz'));
-              },
-              icon: const ImageIcon(AssetImage(SITE_ICON)),
-            ),
-            IconButton(
-              onPressed: () async {
-                await _launchURL(
-                    Uri(scheme: "https", host: "www.univ-bouira.dz"));
-              },
-              icon: const ImageIcon(AssetImage(UNIV_ICON)),
+            Column(
+              children: [
+                IconButton(
+                  onPressed: () async {
+                    await _launchURL(
+                        Uri(scheme: "https", host: "www.univ-bouira.dz"));
+                  },
+                  icon: const ImageIcon(AssetImage(UNIV_ICON)),
+                ),
+                const Text("Université de Bouira",style: TextStyle(fontSize: 9,fontWeight: FontWeight.w600),),
+              ],
             ),
           ],
         ),

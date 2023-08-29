@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 // import 'package:google_fonts/google_fonts.dart';
-import 'package:moadaly_v2/constants.dart';
+import 'package:moadaly_app/constants.dart';
 
 Widget textTable(String text, {Color? color, double? fontSize}) {
   return Text(
@@ -14,6 +14,7 @@ Widget textTable(String text, {Color? color, double? fontSize}) {
     textAlign: TextAlign.center,
   );
 }
+
 
 Widget textUnity(String text, {Color? color}) {
   return Text(

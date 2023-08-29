@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
-import 'package:moadaly_v2/controller/note_controller.dart';
+import 'package:moadaly_app/controller/note_controller.dart';
 
 class NoteInput extends StatefulWidget {
   NoteInput(

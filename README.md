@@ -38,7 +38,7 @@ See  : [SourceCode](https://github.com/Abdelmadjidsmail/moadaly)
 
 
 ## Issues
-Testing is much appreciated. Please post any issue you find in the [Issue tracker](https://github.com/tarek-berkane/moadaly_v2/issues).
+Testing is much appreciated. Please post any issue you find in the [Issue tracker](https://github.com/tarek-berkane/moadaly_app/issues).
 
 
 

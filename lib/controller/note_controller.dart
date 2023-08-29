@@ -1,12 +1,12 @@
 import 'package:get/get_state_manager/src/simple/get_controllers.dart';
-import 'package:moadaly_v2/main.dart';
-import 'package:moadaly_v2/models.dart';
-import 'package:moadaly_v2/models/module.dart';
-import 'package:moadaly_v2/models/year.dart';
-import 'package:moadaly_v2/utils/file.dart';
+import 'package:moadaly_app/models/year.dart';
+import 'package:moadaly_app/utils/file.dart';
+
+import 'dart:developer' as developer;
 
 class NoteController extends GetxController {
   NoteController(Map data) {
+    developer.log("NoteController Initialized", name: "note_controller");
     convertNote(data);
     year = Year(data);
     notes = data;
@@ -48,7 +48,7 @@ class NoteController extends GetxController {
     notes[semesterName]["unites"][unity]["modules"][module][type] = note;
     year.clac();
     await dumpData();
-    print("Data Dumped");
+    developer.log("Data Dumped", name: "note_controller");
 
     update();
   }
@@ -57,8 +57,6 @@ class NoteController extends GetxController {
     try {
       return notes[semesterName][type].toDouble();
     } catch (e) {
-      // print(e);
-      // print("${semesterName} ${type}");
       return 0;
     }
   }
@@ -87,13 +85,10 @@ class NoteController extends GetxController {
       notes = savedData;
       year.clac();
       update();
-      print(notes);
-      print("Data Loaded");
     }
   }
 
   Future<void> clearData() async {
     await deleteInitData(notes["name"]);
-    print("Data cleared");
   }
 }

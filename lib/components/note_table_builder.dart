@@ -1,13 +1,9 @@
-import 'dart:math' as math;
-
 import 'package:flutter/material.dart';
 import 'package:get/state_manager.dart' as state;
-import 'package:get/get.dart';
 
-import 'package:moadaly_v2/components/text.dart';
-import 'package:moadaly_v2/constants.dart';
-import 'package:moadaly_v2/controller/note_controller.dart';
-import 'package:moadaly_v2/screens/partial/note_input.dart';
+import 'package:moadaly_app/components/text.dart';
+import 'package:moadaly_app/controller/note_controller.dart';
+import 'package:moadaly_app/screens/partial/note_input.dart';
 
 // ----------
 // YEAR
@@ -22,7 +18,6 @@ class NoteTableBuilder {
   Widget buildYearTable(context) {
     return GestureDetector(
        onTap: () {
-   
           FocusScope.of(context).requestFocus(FocusNode());
       },
       child: state.GetBuilder<NoteController>(
@@ -417,121 +412,4 @@ class NoteTableBuilder {
     );
   }
 }
-//   Container moduleButton(var title, var type, NoteController controller,
-//       String semesterName, int unityId, int moduleId) {
-//     WidgetHelp widgetHelp = WidgetHelp();
 
-//     return Container(
-//       constraints: const BoxConstraints(maxWidth: 100),
-//       decoration: BoxDecoration(
-//         border: Border.all(color: Colors.white54),
-//         borderRadius: BorderRadius.circular(15),
-//         // color: Colors.white,
-//       ),
-//       margin: const EdgeInsets.symmetric(vertical: 1.5, horizontal: 5),
-//       padding: const EdgeInsets.symmetric(vertical: 2),
-//       alignment: Alignment.center,
-//       child: InkWell(
-//         onTap: () async {
-//           double? value =
-//               await widgetHelp.asyncInputDialog(Get.context!, title, type);
-//           if (value != null && value >= 0 && value <= 20) {
-//             controller.setModule(semesterName, unityId, moduleId, type, value);
-//           }
-//           // print(value);
-//         },
-//         child: Container(
-//           alignment: Alignment.center,
-//           child: Text(
-//             controller.getModule(semesterName, unityId, moduleId, type) < 0
-//                 ? title
-//                 : controller
-//                     .getModule(semesterName, unityId, moduleId, type)
-//                     .toString(),
-//           ),
-//         ),
-//       ),
-//     );
-//   }
-// }
-
-// // --
-// class WidgetHelp {
-//   Future<double?> asyncInputDialog(
-//       BuildContext context, String text, String type) async {
-//     double note = -1;
-//     final formKey = GlobalKey<FormState>();
-//     String? checkValide(String? text) {
-//       try {
-//         if (text == null) {
-//           return "pls insert value";
-//         }
-//         double a = double.parse(text.toString());
-//         // print(a);
-//         return (a <= 20 && a >= 0) ? null : "Erreur de numéro";
-//       } catch (e) {
-//         // print(e);
-//         return "Erreur de numéro";
-//       }
-//     }
-
-//     return showDialog<double>(
-//       context: context,
-//       barrierDismissible:
-//           false, // dialog is dismissible with a tap on the barrier
-//       builder: (BuildContext context) {
-//         return SingleChildScrollView(
-//           child: AlertDialog(
-//             title: Text('Entrerz la note de $text'),
-//             content: Form(
-//               key: formKey,
-//               child: Row(
-//                 mainAxisAlignment: MainAxisAlignment.spaceAround,
-//                 children: <Widget>[
-//                   Container(
-//                     margin: const EdgeInsets.only(top: 30),
-//                     alignment: Alignment.center,
-//                     width: 150,
-//                     child: TextFormField(
-//                       autofocus: true,
-//                       keyboardType: TextInputType.number,
-//                       validator: checkValide,
-//                       onSaved: (str) {
-//                         note = num.parse(str!).toDouble();
-//                       },
-//                       onEditingComplete: () {
-//                         var form = formKey.currentState;
-//                         if (form!.validate()) {
-//                           form.save();
-//                           Navigator.of(context).pop(note);
-//                         }
-//                       },
-//                       decoration: InputDecoration(
-//                           border: OutlineInputBorder(
-//                             borderRadius: BorderRadius.circular(15),
-//                           ),
-//                           labelText: type,
-//                           labelStyle: const TextStyle(color: Colors.blue)),
-//                     ),
-//                   ),
-//                 ],
-//               ),
-//             ),
-//             actions: <Widget>[
-//               TextButton(
-//                 child: const Text('Ok'),
-//                 onPressed: () {
-//                   var form = formKey.currentState;
-//                   if (form!.validate()) {
-//                     form.save();
-//                     Navigator.of(context).pop(note);
-//                   }
-//                 },
-//               ),
-//             ],
-//           ),
-//         );
-//       },
-//     );
-//   }
-// }

@@ -4,8 +4,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 import 'package:get/route_manager.dart';
 import 'package:getwidget/getwidget.dart';
-import 'package:moadaly_v2/constants.dart';
-import 'package:moadaly_v2/main.dart';
+import 'package:moadaly_app/constants.dart';
+import 'package:moadaly_app/main.dart';
+import 'package:moadaly_app/screens/home_page.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({Key? key}) : super(key: key);
@@ -22,8 +23,8 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   Future<void> loadData() async {
-    await Future.delayed(const Duration(seconds: 1,milliseconds: 400));
-    Get.off(HomePage());
+    await Future.delayed(const Duration(seconds: 1, milliseconds: 400));
+    Get.off(const HomePage());
   }
 
   @override
@@ -44,7 +45,5 @@ class _SplashScreenState extends State<SplashScreen> {
     );
   }
 
-  void d() {
-   
-  }
+  void d() {}
 }

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 // import 'package:google_fonts/google_fonts.dart';
 
 const double TEXT_TABLE_SIZE = 12;
@@ -44,7 +45,9 @@ const UNIV_ICON = "assets/icons/knowledge.png";
 const SITE_ICON = "assets/icons/website.png";
 const DEV_ICON = "assets/icons/development.png";
 
-
 // IMAGES
 
 Image MOADALY_LOGO = Image.asset('assets/images/logo.png');
+
+// GOOGLE FONTS
+
