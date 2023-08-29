@@ -93,8 +93,14 @@ flutter:
     - assets/json/L3SI.json
     - assets/json/M1GSI.json
     - assets/json/M1ISIL.json
+    - assets/json/M1IA.json
     - assets/json/M2GSI.json
     - assets/json/M2ISIL.json
+    - assets/json/M2IA.json
+    - assets/json/M1GSI-new.json
+    - assets/json/M1ISIL-new.json
+    - assets/json/M2GSI-new.json
+    - assets/json/M2ISIL-new.json
 
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware.
