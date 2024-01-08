@@ -37,14 +37,30 @@ const Map<String, List<String>> sm_specialities = {
   "master": []
 };
 
+const Map<String, List<String>> other_specialities = {
+  "licence": [
+    "L1arab",
+    "L1droit",
+    "L1economie",
+    "L1francais",
+    "L1humaines",
+    "L1islamic",
+    "L1politics",
+    "L1sociales",
+  ],
+  "master": []
+};
+
 const all_specialities = {
   "info_specialities": info_specialities,
   "st_specialities": st_specialities,
-  "sm_specialities": sm_specialities
+  "sm_specialities": sm_specialities,
+  "other_specialities": other_specialities,
 };
 
 const all_specialities_dep = {
   "info_specialities": "DÉPARTEMENT D'INFORMATIQUE",
   "st_specialities": "DÉPARTEMENT DES SCIENCES ET DE LA TECHNOLOGIE",
-  "sm_specialities": "DÉPARTEMENT DES SCIENCES ET DE LA MATIÉRE"
+  "sm_specialities": "DÉPARTEMENT DES SCIENCES ET DE LA MATIÉRE",
+  "other_specialities": "AUTRES DÉPARTEMENTS",
 };
