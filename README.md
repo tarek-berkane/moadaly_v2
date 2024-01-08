@@ -15,12 +15,12 @@ See  : [SourceCode](https://github.com/Abdelmadjidsmail/moadaly)
 ## App
 
 <div align="center">
-    <img src="screen/s4.png" width="250px"</img>
+    <img src="screen/s1.png" width="250px"</img> 
     <img src="screen/s2.png" width="250px"</img> 
 </div>
 <div align="center">
     <img src="screen/s3.png" width="250px"</img> 
-    <img src="screen/s1.png" width="250px"</img> 
+    <img src="screen/s4.png" width="250px"</img>
 </div>
 
 ## Moadaly
